@@ -1,0 +1,17 @@
+# Optional Render Blueprint. Use "New > Blueprint" or follow the manual table in the README.
+services:
+  - type: web
+    name: fluxvid
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: FRONTEND_ORIGIN
+        value: https://shiv-yogi19.github.io
+      - key: TRUST_PROXY
+        value: "true"
+      - key: MAX_DOWNLOAD_SIZE
+        value: "262144000"
