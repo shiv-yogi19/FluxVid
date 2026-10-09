@@ -1,0 +1,5 @@
+# Ranges, not exact pins, on purpose: yt-dlp must stay current to keep working with sites.
+# Every Docker build installs the newest versions inside these ranges.
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+yt-dlp[default]>=2025.10.1
